@@ -15,9 +15,10 @@ const RelatedProducts = ({category,id}) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({category:category}),
-      })
-    .then((res)=>res.json()).then((data)=>setRelated(data))
-  },[])
+    })
+    .then((res)=>res.json())
+    .then((data)=>setRelated(data))
+  },[category]) // Added category as dependency
 
   return (
     <div className='relatedproducts'>
@@ -26,8 +27,9 @@ const RelatedProducts = ({category,id}) => {
       <div className="relatedproducts-item">
         {related.map((item,index)=>{
           if (id !== item.id) {
-            return <Item key={index} id={item.id} name={item.name} image={item.image}  new_price={item.new_price} old_price={item.old_price}/>
+            return <Item key={index} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
           }
+          return null; // Added explicit return for when condition is false
         })}
       </div>
     </div>
