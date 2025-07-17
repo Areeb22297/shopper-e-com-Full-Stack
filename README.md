@@ -92,8 +92,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](LICENSE)
-
-## Acknowledgements
-
-- [Create React App](https://github.com/facebook/create-react-app)
-- [Railway](https://railway.app/)
